@@ -16,6 +16,8 @@ datasource db {
 model Link {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   url       String
-  slug      String   @unique
+  slug      String
   createdAt DateTime @default(now())
+
+  @@index([slug])
 }

@@ -4,7 +4,12 @@ import iconelink from "../../public/icone-link.svg";
 import Button from "./Button";
 import Image from "next/image";
 
-export function Header(props) {
+interface HeaderProps {
+  name: string;
+  content: string;
+}
+
+export function Header({name, content}: HeaderProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -21,8 +26,8 @@ export function Header(props) {
             onMouseLeave={() => setIsHovered(false)}
           />
           <div className="flex flex-col">
-            <span className="text-xl font-bold">{props.name}</span>
-            <span className="text-base">{props.content}</span>
+            <span className="text-xl font-bold">{name}</span>
+            <span className="text-base">{content}</span>
           </div>
         </div>
         <div className="flex-row flex gap-x-2">

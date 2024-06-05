@@ -1,6 +1,11 @@
 import React from "react";
 
-const Button = ({ variant = "primary", children, ...props }) => {
+type ButtonProps = {
+  variant?: "primary" | "secondary" | "tertiary" | "quaternary";
+  children: React.ReactNode;
+}  & React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button = ({ variant = "primary", children, ...props }: ButtonProps) => {
   let baseClasses = "bg-violet-600 text-white px-6 py-2 rounded-full font-bold";
   let variantClasses;
 
